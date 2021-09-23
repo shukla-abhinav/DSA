@@ -7,6 +7,7 @@ class BinaryTreeNode:
         self.left = None
         self.right = None
 
+#------------------------------------------Function 1------------------------------------------------------
 def printTree(root):
     """
     printing tree in a normal way.
@@ -26,6 +27,7 @@ def printTree(root):
     printTree(root.left)
     printTree(root.right)
     
+#------------------------------------------Function 2------------------------------------------------------
 def treeInput():
     """
     Taking input in binary tree from user.
@@ -34,7 +36,7 @@ def treeInput():
     Returns:
         returning root of the tree.
     """
-    rootData = int(input())
+    rootData = int(input("Enter data: "))
     if rootData == -1:
         return None
     root = BinaryTreeNode(rootData)
@@ -43,6 +45,14 @@ def treeInput():
     root.left = leftTree
     root.right = rightTree
     return root
+
+#------------------------------------------Function 3------------------------------------------------------
+def countTreeNodes(root):
+    if root == None:
+        return 0
+    leftNodes = countTreeNodes(root.left)
+    rightNodes = countTreeNodes(root.right)
+    return  1 + leftNodes + rightNodes
 
 #Creating objects of Binary tree node manually
 # btn1 = BinaryTreeNode(1)
@@ -53,5 +63,6 @@ def treeInput():
 # btn1.left = btn2
 # btn1.right = btn3
 
-root = treeInput()
-printTree(root)
+# root = treeInput()
+# printTree(root)
+# print(countTreeNodes(root))
