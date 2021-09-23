@@ -52,7 +52,7 @@ def countTreeNodes(root):
         return 0
     leftNodes = countTreeNodes(root.left)
     rightNodes = countTreeNodes(root.right)
-    return  1 + leftNodes + rightNodes
+    return 1 + leftNodes + rightNodes
 
 #Creating objects of Binary tree node manually
 # btn1 = BinaryTreeNode(1)
